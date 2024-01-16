@@ -1,7 +1,8 @@
-body{
-    text-align:center;
-    margin:auto;
-    background: #EDF2F4;
+body {
+    text-align: center;
+    margin: auto;
+    background: linear-gradient(to bottom, #333, #666); /* Fondo degradado en grises */
+    color: white; /* Cambia el color del texto para que sea legible en fondos oscuros */
 }
 .Inputdiv{
     display:inline-block;
@@ -10,9 +11,7 @@ body{
 .Outputdiv{
     display:inline-block;
 }
-.Calculatediv{
-    background: #EDF2F4;
-}
+
 .inputoutside{
     display:inline-block;
     vertical-align:top;
@@ -21,29 +20,17 @@ body{
     display:inline-block;
     vertical-align:top;
 }
-.TotalMass{
-    display:inline-block;
-}
-.massinside{
-    float:left;
-}
-.massoutside{
-    float:right;
 
-}
-.masstotalfinal{
-    float:left;
-}
 p{
-    width:300px;
-    color:black;
-    font-size:25px;
-    font-style:italic;
-    padding:10px;
-    margin:10px;
-    
-    margin:auto;
+    width: 300px;
+    color: #3498db; /* Color azul claro */
+    font-size: 25px;
+    font-style: italic;
+    padding: 10px;
+    margin: 10px;
+    margin: auto;
     font-weight: bold;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); /* Sombreado suave */
 }
 p2{
     width:300px;
@@ -62,54 +49,43 @@ p4{
 p5{
     font: 150% sans-serif;
 }
-h1{
-    margin:0px;
-    border:0px;
-    padding:30px;
-    text-align:center;
-    color:rgb(23, 72, 164);
+
+h1 {
+    margin: 0px;
+    border: 0px;
+    padding: 30px;
+    text-align: center;
     font: bold 350% sans-serif;
+    position: relative;
+    color: red; /* Color del texto rojo */
 
 }
-h2{
-    padding:20px;
-    text-align:center;
-    margin:auto;
-    font: bold 250% sans-serif;
-    color:rgb(23, 72, 164);
-    
+
+h1::before {
+    content: attr(data-text); /* Usa el atributo data-text como contenido del pseudo-elemento */
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    color: white; /* Color del texto blanco para simular el relleno */
+    z-index: -1; /* Coloca el pseudo-elemento detrás del texto original */
+    mix-blend-mode: screen; /* Mezcla el pseudo-elemento con el fondo */
 }
-h3{
-    padding:20px;
-    text-align:center;
-    margin:auto;
-    font: bold 150% sans-serif;
-    color:rgb(23, 72, 164);
-    
+
+/* Aplica transición para un efecto más suave */
+h1:hover::before {
+    transform: scale(1.05);
+    opacity: 0.8;
+    transition: transform 0.3s ease, opacity 0.3s ease;
 }
-h4{
-    padding:20px;
-    text-align:center;
-    margin:auto;
-    font: bold 150% sans-serif;
-    color:red;
-    
-}
+
 input[type=text]{
     margin:10px;
     padding:10px;
     font-weight: bold;
     font-size: 17px;
     border:2px solid black;
-}
-input[type=button]{
-    margin:10px;
-    padding:10px;
-    display:block;
-    margin-left:auto;
-    margin-right:auto;
-    font-size:60px;
-    background:#ee6c4d;
 }
 lattext{
     font-size:25px;
@@ -129,129 +105,8 @@ form{
 select{
     font-size:20px;
 }
-#volume{
-    margin:10px;
-    padding:10px;
-    background:rgb(203, 201, 201);    
-}
-#density{
-    margin:10px;
-    padding:10px;
-    background:rgb(203, 201, 201);
-}
-#mass{
-    margin:10px;
-    padding:10px;
-    background:rgb(203, 201, 201);
-}
-#volumebuffer{
-    margin:10px;
-    padding:10px;
-    background:rgb(203, 201, 201);
-}
-#volumetotal{
-    margin:10px;
-    padding:10px;
-    background:rgb(203, 201, 201);
-}
-#massbuffer{
-    margin:10px;
-    padding:10px;
-    background:rgb(203, 201, 201);
-}
-#masstotal{
-    margin:10px;
-    padding:10px;
-    background:rgb(203, 201, 201);
-}
-#volumefluid{
-    margin:10px;
-    padding:10px;
-    background:rgb(203, 201, 201);
-}
-#volumesolid{
-    margin:10px;
-    padding:10px;
-    background:rgb(203, 201, 201);
-}
-#volumefluidbed{
-    margin:10px;
-    padding:10px;
-    background:rgb(203, 201, 201);
-}
-#volumefluidsolid{
-    margin:10px;
-    padding:10px;
-    background:rgb(203, 201, 201);
-}
-#masssolid{
-    margin:10px;
-    padding:10px;
-    background:rgb(203, 201, 201);
-}
 
-#masstotaloutside{
-    margin:10px;
-    padding:10px;
-    background:rgb(203, 201, 201);
-}
-#volumetubes{
-    margin:10px;
-    padding:10px;
-    background:rgb(203, 201, 201);
-}
-#masstubes{
-    margin:10px;
-    padding:10px;
-    background:rgb(203, 201, 201);
-}
-#volumetubeseHX{
-    margin:10px;
-    padding:10px;
-    background:rgb(203, 201, 201);
-}
-#masstubeseHX{
-    margin:10px;
-    padding:10px;
-    background:rgb(203, 201, 201);
-}
-#volumetubescHX{
-    margin:10px;
-    padding:10px;
-    background:rgb(203, 201, 201);
-}
-#masstubescHX{
-    margin:10px;
-    padding:10px;
-    background:rgb(203, 201, 201);
-}
-#volumemltst{
-    margin:10px;
-    padding:10px;
-    background:rgb(203, 201, 201);
-}
-#massmltst{
-    margin:10px;
-    padding:10px;
-    background:rgb(203, 201, 201);
-}
-#massnside{
-    width:250px;
-    margin:10px;
-    padding:10px;
-    background:rgb(203, 201, 201);
-    font-size:25px;
-    text-align:center;
-}
-#massutside{
-    width:250px;
-    margin:10px;
-    padding:10px;
-    background:rgb(203, 201, 201);
-    font-size:25px;
-    text-align:center;
-}
-#masstotafinal{
+#wp{
     width:300px;
     margin:20px;
     padding:20px;
@@ -259,13 +114,62 @@ select{
     font-size:30px;
     text-align:center;
 }
-.TCimage{
-    float:right;
+
+input[type=button] {
+    margin: 10px;
+    padding: 15px 30px;
+    font-size: 20px;
+    font-weight: bold;
+    color: #fff;
+    background: linear-gradient(to right, #ee6c4d, #ff9a40); /* Cambia los colores según tus preferencias */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    display: inline-block;
 }
-.TCimageexp{
-    float:right;
+
+input[type=button]:hover {
+    background: linear-gradient(to right, #ff9a40, #ee6c4d); /* Cambia los colores según tus preferencias */
 }
-.References{
-    font: 100% sans-serif;
-    display:inline-block;
+
+#wp {
+    width: 300px;
+    margin: 20px;
+    padding: 20px;
+    background: linear-gradient(to right, #dcdcdc, #f0f0f0); /* Puedes ajustar los colores según tus preferencias */
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    font-size: 30px;
+    text-align: center;
+    color: #333;
+}
+
+#wp::placeholder {
+    color: #888; /* Estilo para el texto de marcador de posición si es aplicable */
+}
+
+
+.input-item {
+    margin-bottom: 15px; /* Espacio entre los elementos */
+    font-size: 20px; /* Ajusta el tamaño de la fuente según tus preferencias */
+}
+
+label {
+    display: inline-block;
+    width: 80px; /* Ajusta el ancho de la etiqueta según tus necesidades */
+    text-align: right; /* Alinea el texto de la etiqueta a la derecha */
+    margin-right: 10px; /* Espacio entre la etiqueta y el cuadro de entrada */
+}
+
+input[type=text] {
+    margin: 10px;
+    padding: 10px;
+    font-size: 20px;
+    border: 2px solid #000;
+    border-radius: 5px;
+    background-color: #fff;
+    text-align: center;
+    transition: border-color 0.3s ease;
 }

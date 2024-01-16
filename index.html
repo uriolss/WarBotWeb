@@ -4,34 +4,54 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>UniverseWars winrate calculator</title>
+    <title>Winrate calculator</title>
     <link rel="stylesheet" href="./style.css">
     <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=default'></script>
 </head>
 <body>
     <h1>UniverseWars: Ascension Probability Calculator</h1>
-    <h2>Input your skills and quest</h2>
     <div class="Inputdiv">
-        
-        <p2>&nbsp;</p2> 
-        <h3>Input values</h3>
-        <p2>&nbsp;</p2> 
-        <p>Strength:</p>
-        <input type="text" name="Strength" id="Strength">
-        <p>Defense:</p>
-        <input type="text" name="Defense" id="Defense">
-        <p>Life:</p>
-        <input type="text" name="Life" id="Life">
-        <p>Crit:</p>
-        <input type="text" name="Crit" id="Crit">
-        <p>Accuracy:</p>
-        <input type="text" name="Accuracy" id="Accuracy">
-        <p>Evasion:</p>
-        <input type="text" name="Evasion" id="Evasion">
-        <p>Crit prob:</p>
-        <input type="text" name="Critprob" id="Critprob">
-        <p>Quest:</p>
-        <input type="text" name="Quest" id="Quest">
+        <div class="input-row">
+            <div class="input-item">
+                <label for="Strength">Strength:</label>
+                <input type="text" name="Strength" id="Strength">
+            </div>
+            <div class="input-item">
+                <label for="Defense">Defense:</label>
+                <input type="text" name="Defense" id="Defense">
+            </div>
+            <div class="input-item">
+                <label for="Life">Life:</label>
+                <input type="text" name="Life" id="Life">
+            </div>
+            <div class="input-item">
+                <label for="Crit">Crit:</label>
+                <input type="text" name="Crit" id="Crit">
+            </div>
+            <div class="input-item">
+                <label for="Accuracy">Accuracy:</label>
+                <input type="text" name="Accuracy" id="Accuracy">
+            </div>
+            <div class="input-item">
+                <label for="Evasion">Evasion:</label>
+                <input type="text" name="Evasion" id="Evasion">
+            </div>
+            <div class="input-item">
+                <label for="Critprob">Crit prob:</label>
+                <input type="text" name="Critprob" id="Critprob">
+            </div>
+            <div class="input-item">
+                <label for="Quest">Quest:</label>
+                <input type="text" name="Quest" id="Quest">
+            </div>
+        </div>
+
+    </div>
+    
+    
+    <div class="Outputdiv">
+        <p>Winning Probability (%):</p>
+        <input type="text" name="wp" id="wp">
         
         <div class="Calculatediv">
             <p2>&nbsp;</p2> 
@@ -43,15 +63,7 @@
             <input type="button" onclick="Ref()" value="Ref Case">
             <p2>&nbsp;</p2> 
         </div>
-    </div>
-    
-    <div class="Outputdiv">
-        <p2>&nbsp;</p2> 
-        <h3>Output values</h3>
-        <p2>&nbsp;</p2> 
-        <p>Winning Probability:</p>
-        <input type="text" name="wp" id="wp">
-        
+
     </div>
 
    
@@ -195,7 +207,7 @@
                 console.log("Probability win: " + probwin);
             }
 
-            document.getElementById("wp").value = probwin;
+            document.getElementById("wp").value = probwin.toFixed(2);
 
             
         }
@@ -213,6 +225,8 @@
 
             calculate();
         }
+
+        
     </script>
 </body>
 </html>
